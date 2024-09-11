@@ -1,0 +1,96 @@
+---
+title: "Add or remove class from an element"
+author: "deeps8"
+category: "DOM Manipulation"
+tags: ["HTML","JS","CSS","DOM"]
+repoLink: "https://github.com/deeps8/dev-logs/blob/main/challenges/temp-1.mdx"
+createdOn: '2020-02-17'
+updatedOn: '2024-02-17'
+---
+
+👋 Welcome to [**NestJS**](https://nestjs.com/)
+
+**What is the Nodejs framework?** 
+
+Node.js is an open-source, cross-platform, runtime JavaScript environment that enables you to write server-side applications. It runs on Google Chrome’s V8 JavaScript engine and thus runs JavaScript outside the web browser.
+
+**NestJS** is an open-source framework that helps you build scalable Node.js server-side applications. Heavily inspired by Angular, it is built on Typescript and uses progressive JavaScript. It has a simple design with 3 main components: controllers, modules, and providers.
+
+## **NestJS Architecture**
+
+https://lh5.googleusercontent.com/4HvTgUFGeQse53g04p7r_V21EnzqPgaM_rf3BlhNv6LfSnYF_QqDhZKcrGleRNSiGYgjZV_OHVDotewsVdnrE2lKjTQIArpmH4don_uRZeB6KdPhNWrS0ABtsCJEaG-lL6DMB6WBHFsxv0Rxiyo11IYh7qLOZadiz_aV2usRhFcIpLxKMQSn-MWnDA
+
+**Modules :**
+
+A module allows you to group together related controllers and service providers.
+
+**@Modules()** **decorator is used for modules.
+
+**Controllers :**
+
+It is responsible for handling incoming HTTP requests, processing them
+
+**@Controller(),** it groups a set of route handlers together that are responsible for processing the request under a base endpoint.
+
+Nest supports @Get, @Post(), @Put(), @Delete(), @Header(), @UseFilters(), @UsePipes(), @All(), and other Route handler decorators.
+
+**Service Providers :**
+
+It encapsulates related business logic and function into a single class.
+
+Nest collects the list of providers defined by all modules in the application, creates a single instance of each provider, and injects the provider instance to any controller requesting it.
+
+**@Injectable()** decorator that helps in injecting the service into any controller.
+
+## Features :
+
+- It combines the elements of OOPs (Object-Oriented Programming), FP (Functional Programming), and FRP (Functional Reactive Programming).
+- It supports various databases like PostgreSQL, MongoDB, MySQL, Redis, Apache Cassandra, etc.
+- NestJS is platform agnostic - it uses Express by default but you can configure it to work with any HTTP framework like Fastify.
+- It provides a wide range of functionalities, APIs, and libraries so that developers can build applications with fewer lines of code.
+- It was created for building Monoliths and [**Micro-services**](https://www.solutelabs.com/blog/microservices-nestjs).
+- It contains a built-in Dependency Injection container thus keeping your code clean, and easy to read and use.
+- You can easily integrate with technologies such as Mongoose, Prisma, TypeORM, GraphQL, and concepts like Logging, Validation, Caching, and Web Sockets.
+
+## Pros :
+
+- Extensible: Thanks to its modular architecture, NestJS is flexible and allows you to use the other existing libraries within your project (more on this below).
+- Architecture: NestJS has a project architecture that provides testing, scaling, and maintenance
+- Versatile: Provides an adaptable ecosystem
+- Progressive: NestJS makes use of JavaScript functions and implements mature solutions and design patterns in software development
+- TypeScript: Leverages TypeScript, a superset of JavaScript
+- Documentation: NestJS encourages documentation thanks to the use of decorators.
+- Testing: due to dependency injection and modularity, performing testing becomes much simpler.
+- CLI: NestJS includes its own CLI tool for project management and handling scaffolding is definitely nice to have.
+
+## Cons :
+
+- Scaffolding: In NestJS, everything has a highly defined structure, so sometimes we can get lost or derailed in generating or navigating so many files.
+- Learning Curve: New developer needs to learn the framework, it is not as easygoing as Express.
+- A whole lot of magic: magic means that something is working just because it is working. Until it stops working, that is. There are instances where doing certain things would be a thousand times simpler if done with Express rather than NestJS, and when a developer encounters these blockers, they will need someone more experienced to assist them. Someone with knowledge of dependency injection, and experience working with more seasoned frameworks like Spring.
+- Feels Old: Given its resemblance to .NET Core, Spring and others.
+
+## NestJS vs ExpressJS
+
+| **Categories** | **NestJS** | **ExpressJS** |
+| --- | --- | --- |
+| **Opinionated or Not** | It is Opinionated. | It is Unopinionated |
+|  | Focuses more on conventions and principles. | Doesn’t have pre-defined rules to follow |
+|  | Develop applications less prone to error. | Can assume and experiment with code and its implementation. |
+|  |  |  |
+| **Architecture** | Provide ready-to-use components like controllers, providers, and modules. | Has no proper structure. Applications might end up being inefficient and less optimized. |
+|  |  |  |
+| **Type-Safety** | Support Typescript by default, more reliable and suitable to develop large-scale apps | Does not support Typescript, the dev has to manually set it up.
+ |
+|  |  |  |
+| **Performance** | Have Nest CLI that allows generating boilerplates for projects | Is asynchronous. Can execute multiple operations independently. |
+|  | Dependency injection allows multiple dependencies to run your app smoothly | No scalable |
+|  |  |  |
+| **Popularity** | Slowly gaining popularity | Older Framework so more popular and has a bigger user community |
+|  | Ranked second among most starred Nodejs frameworks. (ac. GitHub) | Ranked at top of Nodejs Framework as per GitHub |
+|  | Companies using Nest: Adidas, Capgemini, Decathlon, Autodesk, and more. | Companies using Express: Netflix, IBM,eBay, Paypal, etc.  |
+|  |  |  |
+| **Unit Testing** | Easy and fast as CLI includes default testing env. configured in jest.  | Need to write separate code for testing |
+|  | Auto-generates testing bed code. | Time-consuming, slows down the app's productivity. |
+|  |  |  |
+| **Use Cases** | Better suited for enterprise-level web apps | Suited for building fintech and streaming applications as live streaming is complex with multiple levels of data streams. |
