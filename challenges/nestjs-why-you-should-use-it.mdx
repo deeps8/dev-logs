@@ -67,12 +67,6 @@ Nest collects the list of providers defined by all modules in the application, c
 - A whole lot of magic: magic means that something is working just because it is working. Until it stops working, that is. There are instances where doing certain things would be a thousand times simpler if done with Express rather than NestJS, and when a developer encounters these blockers, they will need someone more experienced to assist them. Someone with knowledge of dependency injection, and experience working with more seasoned frameworks like Spring.
 - Feels Old: Given its resemblance to .NET Core, Spring and others.
 
-| Parameter     | Description                                   |
-| ------------- | --------------------------------------------- |
-| Domain        | ManagementClient server domain                |
-| Client Id     | Management API Non Interactive Client Id.     |
-| Client Secret | Management API Non Interactive Client Secret. |
-
 ## NestJS vs ExpressJS
 
 | **Categories** | **NestJS** | **ExpressJS** |
@@ -80,19 +74,13 @@ Nest collects the list of providers defined by all modules in the application, c
 | **Opinionated or Not** | It is Opinionated. | It is Unopinionated |
 |  | Focuses more on conventions and principles. | Doesn’t have pre-defined rules to follow |
 |  | Develop applications less prone to error. | Can assume and experiment with code and its implementation. |
-|  |  |  |
 | **Architecture** | Provide ready-to-use components like controllers, providers, and modules. | Has no proper structure. Applications might end up being inefficient and less optimized. |
-|  |  |  |
 | **Type-Safety** | Support Typescript by default, more reliable and suitable to develop large-scale apps | Does not support Typescript, the dev has to manually set it up.|
-|  |  |  |
 | **Performance** | Have Nest CLI that allows generating boilerplates for projects | Is asynchronous. Can execute multiple operations independently. |
 |  | Dependency injection allows multiple dependencies to run your app smoothly | No scalable |
-|  |  |  |
 | **Popularity** | Slowly gaining popularity | Older Framework so more popular and has a bigger user community |
 |  | Ranked second among most starred Nodejs frameworks. (ac. GitHub) | Ranked at top of Nodejs Framework as per GitHub |
 |  | Companies using Nest: Adidas, Capgemini, Decathlon, Autodesk, and more. | Companies using Express: Netflix, IBM,eBay, Paypal, etc.  |
-|  |  |  |
 | **Unit Testing** | Easy and fast as CLI includes default testing env. configured in jest.  | Need to write separate code for testing |
 |  | Auto-generates testing bed code. | Time-consuming, slows down the app's productivity. |
-|  |  |  |
 | **Use Cases** | Better suited for enterprise-level web apps | Suited for building fintech and streaming applications as live streaming is complex with multiple levels of data streams. |
