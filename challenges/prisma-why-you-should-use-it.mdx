@@ -1,0 +1,86 @@
+---
+title: "Prisma, Why you should use it!"
+author: "deeps8"
+category: "Database"
+tags: ["HTML","JS","DB","Nodejs"]
+repoLink: "https://github.com/deeps8/dev-logs/blob/main/challenges/prisma-why-you-should-use-it.mdx"
+createdOn: '2020-02-17'
+updatedOn: '2024-02-17'
+---
+
+Prisma is an **Object Relational Mapping (ORM)** for working with databases.
+
+**Why ORM?**
+
+1. ORM minimizes the amount of Query Language knowledge required to connect a database to an application. 
+2. ORMs also automatically generate the SQL code.
+3. Increase the productivity of developers, allowing them to focus on generating business logic.
+4. Code Reuse.
+5. Reduced Testing.
+
+Prisma is an open-source next-generation ORM. It consists of the following parts:
+
+- **Prisma Client**: Auto-generated and type-safe query builder for Node.js & TypeScript
+- **Prisma Migrate**: Migration system
+- **Prisma Studio**: GUI to view and edit data in your database
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7f4d7e4a-2ace-47ad-afb8-2ada2020cec0/Untitled.png)
+
+Working with relational databases is a major bottleneck in application development. Debugging SQL queries or complex ORM objects often consume hours of development time.
+
+Prisma provides a clean and type-safe API for submitting database queries that return *plain-old JavaScript objects.*
+
+### Features of Prisma
+
+- **Thinking in objects** instead of mapping relational data
+- **Queries not classes** to avoid complex model objects
+- **Single source of truth** for database and application models
+- **Type-safe database queries** that can be validated at compile time
+- **Less boilerplate** so developers can focus on the important parts of their app
+- **Auto-completion in code editors** instead of needing to look up documentation
+
+### Prisma Setup (*basic*)
+
+*Detailed Setup: [here](https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases-typescript-postgres)*
+
+1. Initialize the Nodejs project and install the required packages
+`npm init -y 
+ npm install prisma typescript ts-node @types/node --save-dev`
+2. Initialize the Prisma with 
+`npx prisma init`
+3. Now Connect your database.
+Configure your datasource with the required providers (PostgreSQL, SQL, MongoDB) and DB_URL
+4. Create a database schema and then migrate it.
+`npx prisma migrate dev --name init`
+It creates a new SQL migration file and runs SQL against the database.
+5. Install Prisma Client
+ `npm install @prisma/client`
+now just by importing the Prisma-client we can communicate with DB and can perform operations.
+
+### **Why Prisma?**
+
+| **Category** | **Prisma** | **Type-ORM** | **Query Language / DB tools** |
+| --- | --- | --- | --- |
+| **Productivity**  | High | Medium | Low |
+| **Control** | Medium | Medium | High |
+| **Model Definition** | uses a custom Schema Definition Language (SDL) | uses classes and decorators. | Structured Query Language |
+| **Type Safety** | Highly typed safe. Provides Prisma client through which we can communicate with DB and auto-completion. | provide type safety but falls short in some situations. In case of selecting a subset of a query result. | Does not provide any type-safety |
+| **DB Compatibility** | It is compatible with PostgreSQL, MySQL, SQLite, MongoDB, CockroachDB, Microsoft SQL Server
+ | It Supports MySQL, MariaDB, Postgres, CockroachDB, SQLite, Microsoft SQL Server, Oracle, and SAP Hana. | It is not compatible with single DB only |
+
+**Pros :**
+
+1. Type-safe database access
+2. Open Source
+3. Auto-generated query builder
+4. Supports multiple database systems
+5. Increases confidence during development
+6. Built specifically for Postgres and TypeScript
+7. Productive application development
+8. Supports multiple RDBMSs
+9. Robust migrations system
+
+**Cons :** 
+
+1. It lacks a DBAL (Database Abstraction Layer)
+2. Can be intimidating to beginners
