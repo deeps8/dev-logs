@@ -1,0 +1,81 @@
+---
+title: "Scroll Driven Animation with CSS only"
+author: "deeps8"
+category: "Challenge"
+tags: ["HTML","JS","CSS","DOM"]
+repoLink: "https://github.com/deeps8/dev-logs/blob/main/challenges/scroll-driven-animation.mdx"
+createdOn: '2020-02-17'
+updatedOn: '2022-10-03'
+---
+
+There is always a challenge in creating scroll-based animation. First thought comes into mind is which library whould be better for adding animation on scroll? GSAP? Framer Motion? AOS? ScrollMagic?
+
+Why not CSS? Yes, we can create scroll-based animation using CSS with just few lines on code. Let’s see how can we achieve it. This is just a starter / demo blog, here is whole documentation for it - [here](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timeline/scroll)  [ it is still in EXPERIMENTAL stage ]
+
+## Scroll-based Animation with CSS only
+
+Learn how to work with Scroll Timelines and View Timelines to create scroll-driven animations in a declarative way. We will be creating few examples to get out hands dirty. 
+
+Scroll-driven animations are a widely used UX pattern on the web, where the animation's progress is directly linked to the scroll position of a container. As users scroll up or down, the animation smoothly advances or reverses in sync with the movement. 
+
+### Progress indicators tracking scroll
+
+The classic way to achieve these kinds of effects is to respond to scroll events on [the main thread](https://developer.mozilla.org/docs/Glossary/Main_thread), which leads to two main problems:
+
+- Modern browsers perform scrolling on a separate process and therefore deliver scroll events asynchronously.
+- Main thread animations are subject to jank.
+
+This makes creating performant scroll-driven animations that are in-sync with scrolling impossible or very difficult.
+
+1. Create a progress which is fixed at the top of screen
+
+<CodeBlock>
+```css
+.progress {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  left: 0;
+  height: 8px;
+  width: 100%;
+  background-color: var(--clr-primary-600);
+}
+```
+</CodeBlock>
+
+
+Simple, we will see a progress-bar at top with full width.
+
+1. How to animate from left to right. We will scale the div to achieve it.
+
+<CodeBlock>
+```css
+.progress {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  left: 0;
+  height: 8px;
+  width: 100%;
+  background-color: var(--clr-primary-600);
+  scale: 0 1;
+  transform-origin: left;
+
+  /* animation */
+  animation: progress_bar linear;
+  animation-timeline: scroll();
+}
+
+@keyframes progress_bar {
+  to {
+    scale: 1 1;
+  }
+}
+```
+</CodeBlock>
+
+**animation-timeline : scroll()**
+
+The **`animation-timeline`** [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) property specifies the timeline that is used to control the progress of a CSS animation. [Read more..](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timeline#browser_compatibility)
+
+[Git repo for it with few more demos](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timeline#browser_compatibility)
